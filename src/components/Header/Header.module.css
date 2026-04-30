@@ -1,0 +1,16 @@
+.header_container {
+  position: fixed;
+  border: 1px solid black;
+  width: 90%;
+  height: 10%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  top: 20px;
+  display: flex;
+  justify-content: right;
+}
+.container_buttons_on_header {
+  width: 250px;
+  font-size: 25px;
+}
