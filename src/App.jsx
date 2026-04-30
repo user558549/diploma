@@ -1,14 +1,15 @@
 import { RegistrationPage, LoginPage } from "./components/pages";
-import { RegOrLoginButton } from "./components/buttons";
+import { RegOrLoginButton, GoToRegistration } from "./components/buttons";
 
 function App() {
   return (
     <>
-      {/* <RegistrationPage>
+      <RegistrationPage>
         <RegOrLoginButton operation="Регистрация" />
-      </RegistrationPage> */}
+      </RegistrationPage>
       <LoginPage>
         <RegOrLoginButton operation="Вход" />
+        <GoToRegistration operation="Зарегистрироваться" />
       </LoginPage>
     </>
   );
