@@ -1,0 +1,14 @@
+.login_page {
+  box-sizing: border-box;
+  min-height: 100vh;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.login_page {
+  font-size: 25px;
+}
