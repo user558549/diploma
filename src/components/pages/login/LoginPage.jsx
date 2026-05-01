@@ -2,6 +2,8 @@ import { useForm } from "react-hook-form";
 import { GoToRegistration, RegOrLoginButton } from "../../buttons";
 import styles from "./LoginPage.module.css";
 
+import { loginFunction } from "../../../BFF/loginFunction";
+
 export const LoginPage = () => {
   const {
     register,
@@ -9,8 +11,9 @@ export const LoginPage = () => {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (formData) => {
-    console.log(formData);
+  const onSubmit = async (formData) => {
+    const result = await loginFunction(formData.login, formData.password);
+    console.log(result);
   };
 
   return (

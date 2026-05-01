@@ -1,0 +1,67 @@
+{
+  "users": [
+    {
+      "id": "001",
+      "login": "Admin",
+      "password": "12345678",
+      "role": "001"
+    }
+  ],
+  "roles": [
+    {
+      "id": "001",
+      "role": "Admin"
+    },
+    {
+      "id": "002",
+      "role": "user"
+    },
+    {
+      "id": "003",
+      "role": "guest"
+    }
+  ],
+  "rooms": [
+    {
+      "id": "001",
+      "number_room": "001"
+    },
+    {
+      "id": "002",
+      "number_room": "002"
+    },
+    {
+      "id": "003",
+      "number_room": "003"
+    },
+    {
+      "id": "004",
+      "number_room": "004"
+    },
+    {
+      "id": "005",
+      "number_room": "005"
+    },
+    {
+      "id": "006",
+      "number_room": "006"
+    },
+    {
+      "id": "007",
+      "number_room": "007"
+    },
+    {
+      "id": "008",
+      "number_room": "008"
+    },
+    {
+      "id": "009",
+      "number_room": "009"
+    },
+    {
+      "id": "010",
+      "number_room": "010"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

@@ -1,6 +1,8 @@
 import { RegOrLoginButton } from "../../buttons";
 import { useForm } from "react-hook-form";
+import { registrationFunction } from "../../../BFF/loginFunction";
 import styles from "./Registration.module.css";
+
 export const RegistrationPage = () => {
   const {
     register,
@@ -8,8 +10,8 @@ export const RegistrationPage = () => {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (formData) => {
-    console.log(formData);
+  const onSubmit = async (formData) => {
+    await registrationFunction(formData.login, formData.password);
   };
 
   return (
