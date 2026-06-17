@@ -1,0 +1,13 @@
+.admin_page_edit_reservation {
+  margin: 0;
+  padding: 0 20px;
+  box-sizing: border-box;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 160px;
+  padding-bottom: 140px;
+  background-image: radial-gradient(#e6e0d4 1px, transparent 1px);
+  background-size: 40px 40px;
+}

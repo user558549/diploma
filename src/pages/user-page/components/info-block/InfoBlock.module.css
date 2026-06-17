@@ -1,0 +1,159 @@
+.info_block_container {
+  margin: 0 auto;
+  width: 70%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  animation: fadeUp 0.6s ease-out;
+}
+.info_block_container h2 {
+  width: auto;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #08060d;
+  margin-bottom: 10px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid #e6e0d4;
+  position: relative;
+  letter-spacing: -0.3px;
+}
+
+.info_block_container h2::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 2px;
+  background-color: #aa3bff;
+  border-radius: 2px;
+}
+.info_block {
+  background-color: #fdfbf7;
+  border-radius: 16px;
+  padding: 28px;
+  border: 1px solid #e6e0d4;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s ease;
+  animation: fadeUp 0.5s ease-out both;
+}
+.info_block:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.info_block:nth-child(3) {
+  animation-delay: 0.2s;
+}
+.info_block:nth-child(4) {
+  animation-delay: 0.3s;
+}
+
+.info_block:hover {
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.08);
+  border-color: #d4cdc0;
+  transform: translateY(-2px);
+}
+.info_block > div {
+  display: flex;
+  gap: 12px;
+  padding: 8px 0;
+  font-size: 17px;
+  color: #2c2c2c;
+  line-height: 1.6;
+}
+.info_block > div:nth-child(odd) {
+  font-weight: 600;
+  color: #6b6375;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding-bottom: 2px;
+}
+.info_block > div:nth-child(even) {
+  font-weight: 500;
+  color: #08060d;
+  padding-top: 2px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #f4f0e8;
+}
+.delete_container {
+  width: auto;
+  margin: 0;
+  text-align: right;
+  margin-top: 24px;
+  padding-top: 16px;
+  padding-bottom: 0;
+  border-bottom: none;
+  border-top: 1px solid #e6e0d4;
+}
+.delete_reservation_button {
+  width: 160px;
+  height: 40px;
+  font-size: 14px;
+  font-weight: 500;
+  background-color: transparent;
+  color: #c53030;
+  border: 1.5px solid #feb2b2;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  letter-spacing: 0.3px;
+}
+.delete_reservation_button:hover {
+  background-color: #c53030;
+  color: #fff;
+  border-color: #c53030;
+  box-shadow: 0 4px 16px rgba(197, 48, 48, 0.2);
+  transform: translateY(-1px);
+}
+.delete_reservation_button:active {
+  transform: translateY(0);
+}
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .user_page {
+    padding-top: 130px;
+    padding-bottom: 130px;
+  }
+
+  .info_block_container {
+    width: 100%;
+    padding: 0 4px;
+  }
+
+  .info_block_container h2 {
+    font-size: 1.6rem;
+  }
+
+  .info_block {
+    padding: 20px;
+  }
+
+  .info_block > div {
+    font-size: 15px;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .delete_container {
+    text-align: center;
+  }
+
+  .delete_reservation_button button {
+    width: 140px;
+    height: 36px;
+  }
+}

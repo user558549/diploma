@@ -1,0 +1,78 @@
+.contacts_page {
+  margin: 0;
+  padding: 0 20px;
+  box-sizing: border-box;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  background-image: radial-gradient(#e6e0d4 1px, transparent 1px);
+  background-size: 40px 40px;
+  padding-top: 130px;
+  padding-bottom: 130px;
+}
+.contacts_page > div {
+  background-color: #fdfbf7;
+  border-radius: 14px;
+  padding: 18px 28px;
+  border: 1px solid #e6e0d4;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+  font-size: 17px;
+  font-weight: 500;
+  color: #2c2c2c;
+  text-align: center;
+  width: 100%;
+  max-width: 500px;
+  transition: all 0.3s ease;
+  animation: fadeUp 0.5s ease-out both;
+  position: relative;
+}
+.contacts_page > div:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.contacts_page > div:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.contacts_page > div:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.contacts_page > div:nth-child(1)::before {
+  content: "📞";
+  margin-right: 10px;
+}
+
+.contacts_page > div:nth-child(2)::before {
+  content: "👤";
+  margin-right: 10px;
+}
+
+.contacts_page > div:nth-child(3)::before {
+  content: "✉️";
+  margin-right: 10px;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 480px) {
+  .contacts_page {
+    padding-top: 120px;
+    padding-bottom: 120px;
+    gap: 14px;
+  }
+
+  .contacts_page > div {
+    font-size: 15px;
+    padding: 16px 20px;
+  }
+}

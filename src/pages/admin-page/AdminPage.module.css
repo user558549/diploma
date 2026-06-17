@@ -1,0 +1,36 @@
+.admin_page {
+  margin: 0;
+  padding: 0 20px;
+  box-sizing: border-box;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  background-image: radial-gradient(#e6e0d4 1px, transparent 1px);
+  background-size: 40px 40px;
+  padding-top: 140px;
+  padding-bottom: 140px;
+}
+
+.H2_panel_admin {
+  position: static;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #08060d;
+  text-align: center;
+  letter-spacing: -0.3px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid #e6e0d4;
+  margin: 0;
+}
+.H2_panel_admin::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 2px;
+  background-color: #aa3bff;
+  border-radius: 2px;
+  margin: 16px auto 0;
+}

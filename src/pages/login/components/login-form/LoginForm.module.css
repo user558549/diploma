@@ -1,0 +1,134 @@
+.login_page_form {
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  background-color: #fdfbf7;
+  padding: 40px 36px;
+  border-radius: 20px;
+  border: 1px solid #e6e0d4;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+  animation: fadeUp 0.6s ease-out;
+}
+
+.login_page_form h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #08060d;
+  margin: 0 0 8px 0;
+  letter-spacing: -0.3px;
+  position: relative;
+  padding-bottom: 16px;
+}
+.login_page_form h1::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 2px;
+  background-color: #aa3bff;
+  border-radius: 2px;
+}
+.login_page_form input {
+  width: 100%;
+  height: 46px;
+  border-radius: 10px;
+  border: 1.5px solid #e6e0d4;
+  background-color: #fdfbf7;
+  padding: 0 16px;
+  font-size: 15px;
+  color: #2c2c2c;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+.login_page_form input::placeholder {
+  color: #b8afa0;
+}
+.login_page_form input:focus {
+  outline: none;
+  border-color: #aa3bff;
+  box-shadow: 0 0 0 3px rgba(170, 59, 255, 0.08);
+}
+.login_page_form span {
+  color: #c53030;
+  font-size: 13px;
+  font-weight: 500;
+  margin-top: -12px;
+  align-self: flex-start;
+  padding-left: 4px;
+}
+
+.button_login {
+  width: 100%;
+  height: 46px;
+  font-size: 16px;
+  font-weight: 600;
+  background-color: #aa3bff;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  letter-spacing: 0.3px;
+  margin-top: 4px;
+  box-shadow: 0 4px 16px rgba(170, 59, 255, 0.25);
+}
+.button_login:hover {
+  background-color: #9333e0;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(170, 59, 255, 0.35);
+}
+.button_login:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(170, 59, 255, 0.2);
+}
+
+.button_registration {
+  max-width: 400px;
+  height: 46px;
+  font-size: 15px;
+  font-weight: 500;
+  background-color: transparent;
+  color: #6b6375;
+  border: 1.5px solid #d4cdc0;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 0.3px;
+  animation: fadeUp 0.6s ease-out 0.1s both;
+}
+.button_registration:hover {
+  background-color: #aa3bff;
+  color: #fff;
+  border-color: #aa3bff;
+  box-shadow: 0 4px 16px rgba(170, 59, 255, 0.25);
+  transform: translateY(-2px);
+}
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (max-width: 480px) {
+  .login_page_form {
+    padding: 32px 20px;
+  }
+
+  .login_page_form h1 {
+    font-size: 1.7rem;
+  }
+}

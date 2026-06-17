@@ -1,0 +1,46 @@
+.loader_container {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  background-image: radial-gradient(#e6e0d4 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.loader {
+  width: 44px;
+  height: 44px;
+  border: 3px solid #e6e0d4;
+  border-radius: 50%;
+  border-right-color: #aa3bff;
+  border-top-color: #aa3bff;
+  animation: loader 0.8s linear infinite;
+}
+.loader_container::after {
+  content: "Загрузка...";
+  font-size: 14px;
+  color: #6b6375;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+@keyframes loader {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 1;
+  }
+}

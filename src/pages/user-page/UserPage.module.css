@@ -1,0 +1,15 @@
+.user_page {
+  margin: 0;
+  padding: 0 20px;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background-image: radial-gradient(#e6e0d4 1px, transparent 1px);
+  background-size: 40px 40px;
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+.user_page > div:last-child {
+  margin-top: 40px;
+}

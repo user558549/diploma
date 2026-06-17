@@ -1,16 +1,18 @@
 .header_container {
+  padding: 0;
+  box-sizing: border-box;
   position: fixed;
-  border: 1px solid black;
   width: 90%;
-  height: 10%;
+  height: 90px;
   left: 0;
   right: 0;
   margin: 0 auto;
   top: 20px;
   display: flex;
   justify-content: right;
-}
-.container_buttons_on_header {
-  width: 250px;
-  font-size: 25px;
+  border-radius: 10px;
+  background-color: #f4f0e8;
+  border-bottom: 1px solid #e6e0d4;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+  z-index: 10;
 }

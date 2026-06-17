@@ -1,2 +1,2 @@
-export * from "./RegOrLoginButton/RegOrLoginButton";
-export * from "./GoToRegistration/GoToRegistration";
+export * from "./button-link/ButtonLink";
+export * from "./Button/Button";

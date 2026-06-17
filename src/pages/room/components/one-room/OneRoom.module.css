@@ -1,0 +1,142 @@
+.info_room_container {
+  padding: 40px;
+  width: 70%;
+  max-width: 900px;
+  background-color: #fdfbf7;
+  border-radius: 20px;
+  border: 1px solid #e6e0d4;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+  animation: fadeUp 0.6s ease-out;
+}
+.info_room_container h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #08060d;
+  margin: 0 0 30px 0;
+  padding-bottom: 16px;
+  border-bottom: 2px solid #e6e0d4;
+  position: relative;
+  letter-spacing: -0.3px;
+  animation: fadeUp 0.5s ease-out;
+}
+
+.info_room_container h2::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 60px;
+  height: 2px;
+
+  border-radius: 2px;
+}
+.photo {
+  min-width: 300px;
+  height: 200px;
+  border-radius: 14px;
+  border: 2px solid #e6e0d4;
+  background: linear-gradient(135deg, #f4f0e8 0%, #ddd6ca 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  color: #b8afa0;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.button_panel {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  padding-top: 20px;
+  border-top: 1px solid #e6e0d4;
+  margin-top: 20px;
+}
+.info_room {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+  margin-bottom: 30px;
+}
+.room_description {
+  background-color: #f4f0e8;
+  border-radius: 16px;
+  padding: 24px;
+  flex: 1;
+  font-size: 18px;
+  font-weight: 500;
+  color: #2c2c2c;
+  line-height: 1.7;
+  border: 1px solid #e6e0d4;
+}
+
+.button_one_room {
+  width: 140px;
+  height: 42px;
+  font-size: 15px;
+  font-weight: 500;
+  background-color: transparent;
+  color: #2c2c2c;
+  border: 1.5px solid #d4cdc0;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  letter-spacing: 0.3px;
+}
+.button_one_room:hover {
+  background-color: #aa3bff;
+  color: #fff;
+  border-color: #aa3bff;
+  box-shadow: 0 4px 16px rgba(170, 59, 255, 0.25);
+  transform: translateY(-2px);
+}
+
+.button_one_room:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(170, 59, 255, 0.2);
+}
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .room_page {
+    padding-top: 110px;
+    padding-bottom: 80px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .info_room_container {
+    width: 100%;
+    padding: 24px;
+  }
+
+  .info_room {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .photo {
+    width: 100%;
+    min-width: unset;
+    height: 220px;
+  }
+
+  .room_description {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .button_panel {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}

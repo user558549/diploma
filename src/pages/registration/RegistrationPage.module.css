@@ -1,0 +1,25 @@
+.registration_page {
+  margin: 0;
+  padding: 0 20px;
+  box-sizing: border-box;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  background-image: radial-gradient(#e6e0d4 1px, transparent 1px);
+  background-size: 40px 40px;
+  padding-top: 130px;
+  padding-bottom: 130px;
+}
+
+.registration_page h1 {
+  font-size: 25px;
+}
+@media (max-width: 480px) {
+  .registration_page {
+    padding-top: 120px;
+    padding-bottom: 120px;
+  }
+}

@@ -1,12 +1,12 @@
-import { RegistrationPage, LoginPage } from "./components/pages";
-import { Header } from "./components";
+import { AppRoutes } from "./routes/AppRoutes";
+import { Header, Footer } from "./components";
 
 function App() {
   return (
     <>
       <Header />
-      <RegistrationPage />
-      <LoginPage />
+      <AppRoutes />
+      <Footer />
     </>
   );
 }

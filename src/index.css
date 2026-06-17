@@ -25,23 +25,18 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 } */
+* {
+  box-sizing: border-box;
+}
 body {
   margin: 0;
+  padding: 0;
+  color: #2c2c2c;
+  font-family: "Segoe UI", "Inter", sans-serif;
+  background-color: #fdfbf7;
 }
 input {
   width: 20%;
   height: 30px;
   border-radius: 10px;
-}
-
-button {
-  width: 200px;
-  height: 50px;
-  border-radius: 5px;
-  border: none;
-  cursor: pointer;
-}
-
-button:hover {
-  opacity: 0.8;
 }
