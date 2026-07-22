@@ -1,7 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router";
 import { useFetch } from "../../hooks/useFetch";
-import { getRoom } from "../../BFF/api";
 import { Loader } from "../../components";
 import { Modal } from "../../components/modal/Modal";
 import { Error } from "../../components/error/Error";
@@ -20,10 +19,10 @@ export const RoomPage = () => {
   const params = useParams();
 
   const {
-    data: oneRoom,
+    serverData: oneRoom,
     isLoading,
     error,
-  } = useFetch(getRoom, params.number_room);
+  } = useFetch(`http://localhost:3001/rooms/${params.number_room}`);
 
   return isLoading ? (
     <Loader />
@@ -41,7 +40,7 @@ export const RoomPage = () => {
           {user.login ? (
             <FormReservation
               user={user}
-              idRoom={oneRoom.id}
+              idRoom={oneRoom._id}
               nameRoom={oneRoom.name}
               dispatch={dispatch}
             />

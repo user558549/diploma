@@ -26,7 +26,7 @@ export const AppRoutes = () => {
     { path: "/login", element: <LoginPage /> },
     { path: "/register", element: <RegistrationPage /> },
     { path: "/rooms", element: <RoomsPage /> },
-    { path: "/room/:number_room", element: <RoomPage /> },
+    { path: "/rooms/:number_room", element: <RoomPage /> },
     { path: "/contacts", element: <ContactsPage /> },
     { path: "/about_us", element: <AboutUsPage /> },
     { path: "/", element: <MainPage /> },

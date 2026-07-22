@@ -1,12 +1,12 @@
 import { H2 } from "../../../../components";
 import { Button } from "../../../../components/buttons";
-import { deleteReservationUser } from "../../../../BFF/api/deletedReservationUser";
+import { deleteReservationUser } from "../../../../api/deletedReservationUser";
 import styles from "./InfoBlock.module.css";
 
 export const InfoBlock = ({ userRoom, refetch }) => {
   const deleteUserReservation = async (roomId) => {
     const resultDeletedReservation = await deleteReservationUser(roomId);
-
+    console.log(resultDeletedReservation);
     if (resultDeletedReservation) {
       refetch();
     }
@@ -16,7 +16,7 @@ export const InfoBlock = ({ userRoom, refetch }) => {
     <div className={styles.info_block_container}>
       <H2>Мои брони</H2>
       {userRoom.map((room) => (
-        <div className={styles.info_block} key={room.id}>
+        <div className={styles.info_block} key={room._id}>
           <div>Название номера:</div>
           <div>{room.name}</div>
           <div>Описание номера:</div>
@@ -25,7 +25,7 @@ export const InfoBlock = ({ userRoom, refetch }) => {
           <div className={styles.delete_container}>
             <Button
               operation="Удалить бронь"
-              onClick={() => deleteUserReservation(room.id)}
+              onClick={() => deleteUserReservation(room._id)}
               className={styles.delete_reservation_button}
             />
           </div>

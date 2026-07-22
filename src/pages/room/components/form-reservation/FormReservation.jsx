@@ -1,15 +1,16 @@
 import { useState } from "react";
 import { useNavigate } from "react-router";
-import { reservationRoom } from "../../../../BFF/api/reservationRoom";
+import { reservationRoom } from "../../../../api/reservationRoom";
 import { Button } from "../../../../components/buttons";
 import styles from "./FormReservation.module.css";
-
+// TODOO
 export const FormReservation = ({ user, idRoom, nameRoom, dispatch }) => {
   const [isReservation, setIsReservation] = useState(false);
   const navigate = useNavigate();
 
   const reservRoom = async () => {
     const resultReservation = await reservationRoom(user, idRoom);
+    console.log(resultReservation);
 
     if (resultReservation) {
       navigate("/user");

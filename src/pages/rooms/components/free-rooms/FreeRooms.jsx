@@ -10,13 +10,13 @@ export const FreeRooms = ({ freeRooms }) => {
       </div>
       <div className={styles.rooms_container}>
         {freeRooms.map((room) => (
-          <div key={room.id} className={styles.room_container}>
+          <div key={room._id} className={styles.room_container}>
             <span> {room.number_room}</span>
             <div className={styles.room}>
-              <img src="" alt="Номер"></img>
+              <img src={room.image_url} alt="Номер"></img>
               <ButtonLink
                 operation="Открыть"
-                path={`/room/${room.number_room}`}
+                path={`/rooms/${room.number_room}`}
                 className={styles.button_open_free_room}
               />
             </div>

@@ -22,6 +22,7 @@ export const LoginForm = ({ register, handleSubmit, onSubmit, errors }) => {
           {...register("password", { required: true })}
         />
         {errors.password && <span>Не указан пароль</span>}
+        {errors.serverError && <span>{errors.serverError.error}</span>}
         <Button operation="Вход" className={styles.button_login} />
       </form>
       <ButtonLink

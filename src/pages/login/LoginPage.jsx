@@ -1,32 +1,48 @@
 import { useForm } from "react-hook-form";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useLocation } from "react-router";
-import { authFunction } from "../../BFF/api/authFunction";
 import { LoginForm } from "./components/login-form/LoginForm";
 import styles from "./LoginPage.module.css";
+import { request } from "../../utils/request";
+import { URL } from "../../constants/url";
+import { useEffect } from "react";
+import { Loader } from "../../components";
 
 export const LoginPage = () => {
+  const userLogin = useSelector(({ user }) => user.login);
+
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isSubmitting },
   } = useForm();
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const location = useLocation();
 
+  useEffect(() => {
+    if (userLogin) {
+      navigate("/");
+    }
+  });
+
   const onSubmit = async (formData) => {
     const from = location.state?.from || "/";
-    const user = await authFunction(formData.login, formData.password);
-
-    if (user) {
+    const { user } = await request(URL.LOGIN, "POST", {
+      login: formData.login,
+      password: formData.password,
+    });
+    if (user.login) {
+      localStorage.setItem("User", JSON.stringify(user));
       dispatch({ type: "SET_USER", payload: user });
       navigate(from);
     }
   };
 
-  return (
+  return isSubmitting ? (
+    <Loader />
+  ) : (
     <div className={styles.login_page}>
       <LoginForm
         register={register}

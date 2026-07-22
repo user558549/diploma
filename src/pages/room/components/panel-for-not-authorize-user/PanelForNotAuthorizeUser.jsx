@@ -8,12 +8,12 @@ export const PanelForNotAuthorizeUser = ({ params }) => {
       <ButtonLink
         operation="Зарегистрироваться"
         path="/register"
-        state={{ from: `/room/${params.number_room}` }}
+        state={{ from: `/rooms/${params.number_room}` }}
       />
       <ButtonLink
         operation="Войти"
         path="/login"
-        state={{ from: `/room/${params.number_room}` }}
+        state={{ from: `/rooms/${params.number_room}` }}
       />
     </>
   );

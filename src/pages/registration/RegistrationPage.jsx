@@ -1,9 +1,11 @@
 import { useNavigate, useLocation } from "react-router";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
-import { registerFunction } from "../../BFF/api";
-import styles from "./RegistrationPage.module.css";
 import { RegistrationForm } from "./components/registration-form/registrationForm";
+import { request } from "../../utils/request";
+import { URL } from "../../constants/url";
+import styles from "./RegistrationPage.module.css";
+import { Loader } from "../../components";
 
 export const RegistrationPage = () => {
   const navigate = useNavigate();
@@ -12,21 +14,29 @@ export const RegistrationPage = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isSubmitting },
   } = useForm();
 
   const dispatch = useDispatch();
 
   const onSubmit = async (formData) => {
     const from = location.state?.from || "/";
-    const user = await registerFunction(formData.login, formData.password);
+    const { user } = await request(URL.REGISTER, "POST", {
+      login: formData.login,
+      password: formData.password,
+      role: 2,
+    });
     if (user) {
+      localStorage.setItem("User", JSON.stringify(user));
       dispatch({ type: "SET_USER", payload: user });
+      console.log(from);
       navigate(from);
     }
   };
 
-  return (
+  return isSubmitting ? (
+    <Loader />
+  ) : (
     <div className={styles.registration_page}>
       <RegistrationForm
         handleSubmit={handleSubmit}

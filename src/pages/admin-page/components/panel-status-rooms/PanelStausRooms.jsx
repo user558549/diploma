@@ -8,7 +8,7 @@ export const PanelStatusRooms = ({ rooms }) => {
       <div className={styles.panel_status_rooms}>
         {rooms.map((room) => (
           <div
-            key={room.id}
+            key={room._id}
             className={`${styles.room} ${room.reservation === false ? styles.free : ""}`}
           >
             {room.number_room}

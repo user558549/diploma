@@ -1,7 +1,8 @@
 import { useEffect, useState, useCallback } from "react";
+import { request } from "../utils/request";
 
-export const useFetch = (operation, params) => {
-  const [data, setData] = useState(null);
+export const useFetch = (url, method, data) => {
+  const [serverData, setServerData] = useState(null);
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [refreshTrigger, setRefreshTrigger] = useState(0);
@@ -9,9 +10,11 @@ export const useFetch = (operation, params) => {
   useEffect(() => {
     const getFunction = async () => {
       try {
-        const getResult = await operation(params);
+        const getResult = await request(url, method, data);
         if (getResult) {
-          setData(getResult);
+          setServerData(getResult);
+        } else {
+          setServerData([]);
         }
       } catch (error) {
         setError(error.message);
@@ -20,11 +23,11 @@ export const useFetch = (operation, params) => {
       }
     };
     getFunction();
-  }, [operation, params, refreshTrigger]);
+  }, [url, method, data, refreshTrigger]);
 
   const refetch = useCallback(() => {
     setRefreshTrigger((prev) => prev + 1);
   }, []);
 
-  return { data, isLoading, error, refetch };
+  return { serverData, isLoading, error, refetch };
 };

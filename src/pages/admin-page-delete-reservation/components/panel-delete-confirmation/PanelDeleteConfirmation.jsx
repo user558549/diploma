@@ -1,4 +1,4 @@
-import { deleteReservationAdmin } from "../../../../BFF/api/deleteReservationAdmin";
+import { deleteReservationAdmin } from "../../../../api/deleteReservationAdmin";
 import { Button } from "../../../../components/buttons";
 import { H2 } from "../../../../components";
 import styles from "./PanelDeleteConfirmation.module.css";

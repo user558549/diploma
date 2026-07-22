@@ -1,12 +1,12 @@
 import { useFetch } from "../../hooks/useFetch";
 import { FreeRooms } from "./components/free-rooms/FreeRooms";
-import { getFreeRooms } from "../../BFF/api";
 import { Loader } from "../../components";
 import { Error } from "../../components/error/Error";
+import { URL } from "../../constants/url";
 import styles from "./RoomsPage.module.css";
 
 export const RoomsPage = () => {
-  const { data: freeRooms, isLoading, error } = useFetch(getFreeRooms);
+  const { serverData: freeRooms, isLoading, error } = useFetch(URL.ROOMS);
 
   return isLoading ? (
     <Loader />

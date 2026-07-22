@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { editReservationAdmin } from "../../../../BFF/api/editReservationAdmin";
+import { editReservationAdmin } from "../../../../api/editReservationAdmin";
 import { Button } from "../../../../components/buttons";
 
 import styles from "./FormEditReservation.module.css";
