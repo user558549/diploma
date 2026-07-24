@@ -2,7 +2,7 @@ export const editReservationAdmin = async (idRoom, userLogin) => {
   if (userLogin) {
     try {
       const response = await fetch(
-        `api/rooms/edit-reservation-user/${idRoom}`,
+        `/api/rooms/edit-reservation-user/${idRoom}`,
         {
           method: "PATCH",
           credentials: "include",

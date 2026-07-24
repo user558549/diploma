@@ -1,7 +1,7 @@
 export const reservationRoom = async (user, idRoom) => {
   if (user) {
     try {
-      const response = await fetch(`api/rooms/${idRoom}`, {
+      const response = await fetch(`/api/rooms/${idRoom}`, {
         method: "PATCH",
         credentials: "include",
         headers: {

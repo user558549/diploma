@@ -1,7 +1,7 @@
 export const deleteReservationAdmin = async (idRoom) => {
   try {
     const response = await fetch(
-      `api/rooms/deleted-reservation-user-is-admin/${idRoom}`,
+      `/api/rooms/deleted-reservation-user-is-admin/${idRoom}`,
       {
         method: "PATCH",
         credentials: "include",

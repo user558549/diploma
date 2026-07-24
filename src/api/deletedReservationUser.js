@@ -1,7 +1,7 @@
 export const deleteReservationUser = async (idRoom) => {
   try {
     const response = await fetch(
-      `api/rooms/deleted-reservation-user/${idRoom}`,
+      `/api/rooms/deleted-reservation-user/${idRoom}`,
       {
         method: "PATCH",
         credentials: "include",
