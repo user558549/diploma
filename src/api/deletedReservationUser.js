@@ -1,7 +1,7 @@
 export const deleteReservationUser = async (idRoom) => {
   try {
     const response = await fetch(
-      `http://94.102.89.76:5000/rooms/deleted-reservation-user/${idRoom}`,
+      `api/rooms/deleted-reservation-user/${idRoom}`,
       {
         method: "PATCH",
         credentials: "include",
