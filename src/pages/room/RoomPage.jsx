@@ -22,7 +22,7 @@ export const RoomPage = () => {
     serverData: oneRoom,
     isLoading,
     error,
-  } = useFetch(`http://localhost:3001/rooms/${params.number_room}`);
+  } = useFetch(`http://94.102.89.76:5000/rooms/${params.number_room}`);
 
   return isLoading ? (
     <Loader />
