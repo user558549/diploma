@@ -1,5 +1,7 @@
 import { useNavigate, useLocation } from "react-router";
 import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { registerSchema } from "../../schemas/registerSchema";
 import { useDispatch } from "react-redux";
 import { RegistrationForm } from "./components/registration-form/registrationForm";
 import { request } from "../../utils/request";
@@ -14,8 +16,11 @@ export const RegistrationPage = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors, isSubmitting },
-  } = useForm();
+    formState: { errors, isSubmitting, isValid },
+  } = useForm({
+    resolver: yupResolver(registerSchema),
+    mode: "onChange",
+  });
 
   const dispatch = useDispatch();
 
@@ -29,7 +34,6 @@ export const RegistrationPage = () => {
     if (user) {
       localStorage.setItem("User", JSON.stringify(user));
       dispatch({ type: "SET_USER", payload: user });
-      console.log(from);
       navigate(from);
     }
   };
@@ -43,6 +47,7 @@ export const RegistrationPage = () => {
         onSubmit={onSubmit}
         register={register}
         errors={errors}
+        isValid={isValid}
       />
     </div>
   );

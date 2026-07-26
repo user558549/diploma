@@ -4,6 +4,7 @@ export const RegistrationForm = ({
   handleSubmit,
   onSubmit,
   register,
+  isValid,
   errors,
 }) => {
   return (
@@ -12,20 +13,13 @@ export const RegistrationForm = ({
       className={styles.registration_form}
     >
       <h1>Регистрация</h1>
-      <input
-        type="text"
-        placeholder="Логин"
-        {...register("login", { required: true })}
-      />
-      {errors.login && <span>Не указан логин</span>}
-      <input
-        type="password"
-        placeholder="Пароль"
-        {...register("password", { required: true })}
-      />
-      {errors.password && <span>Не указан пароль</span>}
+      <input type="text" placeholder="Логин" {...register("login")} />
+      {errors.login && <span>{errors.login.message}</span>}
+      <input type="password" placeholder="Пароль" {...register("password")} />
+      {errors.password && <span>{errors.login.password}</span>}
       <Button
         operation="Зарегистрироваться"
+        disabled={!isValid}
         className={styles.button_registration}
       />
     </form>

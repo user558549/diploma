@@ -1,6 +1,8 @@
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useLocation } from "react-router";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { loginSchema } from "../../schemas/loginSchema";
 import { LoginForm } from "./components/login-form/LoginForm";
 import styles from "./LoginPage.module.css";
 import { request } from "../../utils/request";
@@ -14,8 +16,11 @@ export const LoginPage = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors, isSubmitting },
-  } = useForm();
+    formState: { errors, isSubmitting, isValid },
+  } = useForm({
+    resolver: yupResolver(loginSchema),
+    mode: "onChange",
+  });
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -49,6 +54,7 @@ export const LoginPage = () => {
         handleSubmit={handleSubmit}
         onSubmit={onSubmit}
         errors={errors}
+        isValid={isValid}
       />
     </div>
   );

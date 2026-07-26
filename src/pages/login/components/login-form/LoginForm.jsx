@@ -2,7 +2,13 @@ import { Button } from "../../../../components/buttons";
 import { ButtonLink } from "../../../../components/buttons";
 import styles from "./LoginForm.module.css";
 
-export const LoginForm = ({ register, handleSubmit, onSubmit, errors }) => {
+export const LoginForm = ({
+  register,
+  handleSubmit,
+  onSubmit,
+  errors,
+  isValid,
+}) => {
   return (
     <>
       <form
@@ -10,20 +16,16 @@ export const LoginForm = ({ register, handleSubmit, onSubmit, errors }) => {
         onSubmit={handleSubmit(onSubmit)}
       >
         <h1>Вход</h1>
-        <input
-          type="text"
-          placeholder="Логин"
-          {...register("login", { required: true })}
-        />
-        {errors.login && <span>Не указан логин</span>}
-        <input
-          type="password"
-          placeholder="Пароль"
-          {...register("password", { required: true })}
-        />
-        {errors.password && <span>Не указан пароль</span>}
+        <input type="text" placeholder="Логин" {...register("login")} />
+        {errors.login && <span>{errors.login.message}</span>}
+        <input type="password" placeholder="Пароль" {...register("password")} />
+        {errors.password && <span>{errors.password.message}</span>}
         {errors.serverError && <span>{errors.serverError.error}</span>}
-        <Button operation="Вход" className={styles.button_login} />
+        <Button
+          operation="Вход"
+          disabled={!isValid}
+          className={styles.button_login}
+        />
       </form>
       <ButtonLink
         operation="Регистрация"
