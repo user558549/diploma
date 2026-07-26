@@ -13,7 +13,7 @@ export const FreeRooms = ({ freeRooms }) => {
           <div key={room._id} className={styles.room_container}>
             <span> {room.number_room}</span>
             <div className={styles.room}>
-              <img src="/001.jpeg" alt="Номер"></img>
+              <img src={room.image_url} alt="Номер"></img>
               <ButtonLink
                 operation="Открыть"
                 path={`/rooms/${room.number_room}`}
