@@ -19,7 +19,7 @@ export const LoginPage = () => {
     formState: { errors, isSubmitting, isValid },
   } = useForm({
     resolver: yupResolver(loginSchema),
-    mode: "onChange",
+    mode: "onBlur",
   });
 
   const dispatch = useDispatch();
