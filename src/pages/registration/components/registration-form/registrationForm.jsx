@@ -16,7 +16,7 @@ export const RegistrationForm = ({
       <input type="text" placeholder="Логин" {...register("login")} />
       {errors.login && <span>{errors.login.message}</span>}
       <input type="password" placeholder="Пароль" {...register("password")} />
-      {errors.password && <span>{errors.login.password}</span>}
+      {errors.password && <span>{errors.password.message}</span>}
       <Button
         operation="Зарегистрироваться"
         disabled={!isValid}
