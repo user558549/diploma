@@ -19,7 +19,7 @@ export const RegistrationPage = () => {
     formState: { errors, isSubmitting, isValid },
   } = useForm({
     resolver: yupResolver(registerSchema),
-    mode: "onchange",
+    mode: "onChange",
   });
 
   const dispatch = useDispatch();
