@@ -17,10 +17,14 @@ export const LoginPage = () => {
     register,
     handleSubmit,
     formState: { errors, isSubmitting, isValid },
+    watch,
   } = useForm({
     resolver: yupResolver(loginSchema),
     mode: "all",
   });
+
+  watch("login");
+  watch("password");
 
   const dispatch = useDispatch();
   const navigate = useNavigate();

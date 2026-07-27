@@ -6,7 +6,6 @@ import styles from "./InfoBlock.module.css";
 export const InfoBlock = ({ userRoom, refetch }) => {
   const deleteUserReservation = async (roomId) => {
     const resultDeletedReservation = await deleteReservationUser(roomId);
-    console.log(resultDeletedReservation);
     if (resultDeletedReservation) {
       refetch();
     }

@@ -17,10 +17,14 @@ export const RegistrationPage = () => {
     register,
     handleSubmit,
     formState: { errors, isSubmitting, isValid },
+    watch,
   } = useForm({
     resolver: yupResolver(registerSchema),
-    mode: "all",
+    mode: "onChange",
   });
+
+  watch("login");
+  watch("password");
 
   const dispatch = useDispatch();
 

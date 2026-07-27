@@ -10,7 +10,6 @@ export const FormReservation = ({ user, idRoom, nameRoom, dispatch }) => {
 
   const reservRoom = async () => {
     const resultReservation = await reservationRoom(user, idRoom);
-    console.log(resultReservation);
 
     if (resultReservation) {
       navigate("/user");
